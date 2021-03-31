@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "729012209204",
+    "firebase_url": "https://projectx-e3e6f.firebaseio.com",
+    "project_id": "projectx-e3e6f",
+    "storage_bucket": "projectx-e3e6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729012209204:android:9b3e9f868c3fde873e6c61",
+        "android_client_info": {
+          "package_name": "com.murad.kotlincoroutiens"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEwYiwY4zLVpDmyNwaD99zbkxNEesR5Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729012209204:android:67aac70c20593f783e6c61",
+        "android_client_info": {
+          "package_name": "com.murad.testauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEwYiwY4zLVpDmyNwaD99zbkxNEesR5Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729012209204:android:3a855ab20bd3296f3e6c61",
+        "android_client_info": {
+          "package_name": "com.muradit.projectx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729012209204-ggb9oeh1tfm9me8iatpol9139d6c9g4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.muradit.projectx",
+            "certificate_hash": "794cee035a9add507ee5767e28f12a83b3c7bde2"
+          }
+        },
+        {
+          "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEwYiwY4zLVpDmyNwaD99zbkxNEesR5Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729012209204-26ff0q9ra8lp7buvfuhjj7tuie283a62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
