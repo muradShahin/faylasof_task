@@ -1,6 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">faylasoof_task</string>
-    <string name="google_client">719209212640-rrmckr5ng74duof9aqsfm5ttge2vb589.apps.googleusercontent.com</string>
     <string name="signUpGoogle">SignUp With Google</string>
     <string name="passowrd">password</string>
     <string name="login">login</string>
