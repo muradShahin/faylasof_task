@@ -8,4 +8,5 @@
     <string name="secondname">second name</string>
     <string name="dob">date of birth</string>
     <string name="normal_auth">Create Account</string>
+    <string name="login_facebook">Login With Facebook</string>
 </resources>

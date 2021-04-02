@@ -241,7 +241,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_40sdp"
-        android:background="@color/main_blue"
+        android:background="@color/main_orange_dark"
         android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -262,5 +262,27 @@
             android:text="@string/normal_auth"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/facebook_btn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/google_btn">
+
+        <Button
+            android:id="@+id/fb_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:fontFamily="@font/open_sans_semibold"
+            android:gravity="center"
+            android:text="@string/login_facebook"
+            android:textColor="@color/white" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

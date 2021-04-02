@@ -9,7 +9,11 @@
         android:id="@+id/signUp"
         tools:layout="@layout/sign_in"
         android:name="com.murad.faylasoof.auth.signup.SignUp"
-        android:label="SignUp" />
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_loginView"
+            app:destination="@id/loginView" />
+    </fragment>
     <fragment
         android:id="@+id/loginView"
         tools:layout="@layout/login_view"

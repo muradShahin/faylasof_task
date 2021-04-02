@@ -7,12 +7,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.facebook.AccessToken
+import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -85,6 +88,18 @@ class SignUpViewModel @Inject constructor() : ViewModel() {
             emit(result)
         }
         return createUserResult
+    }
+
+
+    fun performFaceBookLogin(token: AccessToken):Flow<Resource<AuthResult>>{
+
+        val loginFaceBookResult : Flow<Resource<AuthResult>> = flow {
+
+            val result =  handleFacebookAccessToken(token)
+            emit(result)
+        }
+
+        return loginFaceBookResult
     }
 
     private fun handleSignInResultGoogle(task:Task<GoogleSignInAccount>) :Resource<User>{
@@ -173,6 +188,21 @@ class SignUpViewModel @Inject constructor() : ViewModel() {
             return Resource.error("${e.message}",null)
         }
 
+    }
+
+
+    private suspend fun handleFacebookAccessToken(token:AccessToken):Resource<AuthResult>{
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        try {
+            Log.d(TAG, "handleFacebookAccessToken: Reached")
+            return Resource.success(auth.signInWithCredential(credential).await())
+
+        }catch (e:Exception){
+            Log.d(TAG, "handleFacebookAccessToken: Error")
+
+            return Resource.error("failed to handle facebook login",null)
+        }
     }
 
 
