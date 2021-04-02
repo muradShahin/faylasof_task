@@ -11,6 +11,8 @@
     <string name="normal_auth">Create Account</string>
     <string name="login_facebook">Login With Facebook</string>
 
-    <string name="facebook_app_id">939384546832732</string>
-    <string name="fb_login_protocol_scheme">fb939384546832732</string>
+    <string name="facebook_app_id">124295669615075</string>
+    <string name="fb_login_protocol_scheme">fb124295669615075</string>
+
+
 </resources>

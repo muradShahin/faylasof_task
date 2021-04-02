@@ -13,8 +13,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murad.faylasoof.R
 import com.murad.faylasoof.adapters.UsersAdapter
+import com.murad.faylasoof.auth.models.User
 import com.murad.faylasoof.helpers.MyTextWatcher
 import com.murad.faylasoof.helpers.MyWatcher
+import com.murad.faylasoof.helpers.Status
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.coroutines.flow.collect
@@ -61,14 +63,25 @@ class home_fragment : Fragment() {
         progressBar.visibility=View.VISIBLE
         lifecycleScope.launch {
 
+
             viewModel.getAllUsers(query).collect {
 
-                Log.d(TAG, "getAllUsers: ${it.data?.get(0)?.first_name}  || ${it.status} || ${it.message}")
+                Log.d(TAG, "getAllUsers: ${it.data}")
+               
+                    if (it.data?.isNotEmpty()!!) {
+                        Log.d(TAG, "getAllUsers: ${it.data?.get(0)?.first_name}  || ${it.status} || ${it.message}")
 
-                it.data?.let { it1 -> userAdapter.submitUsers(it1) }
-                progressBar.visibility=View.GONE
+                        it.data?.let { it1 -> userAdapter.submitUsers(it1) }
+                        progressBar.visibility = View.GONE
+                    }else{
+                        progressBar.visibility = View.GONE
+                        userAdapter.clearData()
+                    }
+
 
             }
+
+
 
         }
 

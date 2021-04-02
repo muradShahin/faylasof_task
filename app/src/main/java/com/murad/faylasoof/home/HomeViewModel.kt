@@ -29,12 +29,16 @@ class HomeViewModel @Inject constructor() : ViewModel() {
 
             val result = getAllUsersFromDb(query)
 
+            Log.d(TAG, "getAllUsers : Flow exceptiom reached}")
+
             try {
-                if(result.data?.isNotEmpty()!!)
+
+                //if(result.data?.isNotEmpty()!!)
                   emit(result)
-               
+
             }catch (e:Exception){
                 Log.d(TAG, "getAllUsers : Flow exceptiom ${e.message}")
+                emit(Resource.error("no users found",ArrayList<User>()))
             }
         }
 

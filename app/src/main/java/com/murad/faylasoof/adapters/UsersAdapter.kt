@@ -19,6 +19,11 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>(){
         notifyDataSetChanged()
     }
 
+    fun clearData(){
+        this.users.clear()
+        notifyDataSetChanged()
+    }
+
     class UserViewHolder(val view:UserRowBinding):RecyclerView.ViewHolder(view.root){
 
     }
