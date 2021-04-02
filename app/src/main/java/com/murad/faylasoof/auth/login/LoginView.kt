@@ -27,6 +27,7 @@ import com.murad.faylasoof.auth.models.User
 import com.murad.faylasoof.helpers.ExistUtil
 import com.murad.faylasoof.helpers.Resource
 import com.murad.faylasoof.helpers.Status
+import com.murad.faylasoof.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.login_view.*
 import kotlinx.coroutines.flow.collect
@@ -107,9 +108,9 @@ class LoginView : Fragment() {
             viewModel.loginWithEmailAndPass(email,password).collect {
 
                 if(it.status == Status.SUCCESS){
-                    /**
-                     * navigate to home
-                     */
+                   
+                    goToHomeActivity()
+                    
                 }else{
                     Toast.makeText(requireContext(),"could not login",Toast.LENGTH_SHORT).show()
                 }
@@ -119,6 +120,7 @@ class LoginView : Fragment() {
 
     }
 
+  
 
     private fun signWithGoogle() {
 
@@ -151,11 +153,8 @@ class LoginView : Fragment() {
 
                     if(it.status == Status.SUCCESS){
 
-                        /**
-                         * user already exist on our database so no need to add it again
-                         */
+                        goToHomeActivity()
 
-                        // navigate to home activity
 
                     }else{
                         addUserToDb(user)
@@ -188,6 +187,14 @@ class LoginView : Fragment() {
         }
 
     }
+
+    private fun goToHomeActivity() {
+        
+        val intent = Intent(requireActivity(),HomeActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
 
 
 }
