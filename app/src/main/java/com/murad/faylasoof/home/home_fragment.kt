@@ -67,7 +67,7 @@ class home_fragment : Fragment() {
             viewModel.getAllUsers(query).collect {
 
                 Log.d(TAG, "getAllUsers: ${it.data}")
-               
+
                     if (it.data?.isNotEmpty()!!) {
                         Log.d(TAG, "getAllUsers: ${it.data?.get(0)?.first_name}  || ${it.status} || ${it.message}")
 
