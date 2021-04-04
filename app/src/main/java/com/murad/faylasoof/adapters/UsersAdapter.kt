@@ -11,21 +11,17 @@ import com.murad.faylasoof.auth.models.User
 import com.murad.faylasoof.databinding.UserRowBinding
 import java.util.ArrayList
 
-class UsersAdapter : ListAdapter<User,UsersAdapter.UserViewHolder>(UserDiffUtil()){
+class UsersAdapter : ListAdapter<User, UsersAdapter.UserViewHolder>(UserDiffUtil()) {
 
 
-
-    class UserViewHolder(val view:UserRowBinding):RecyclerView.ViewHolder(view.root){
-
-    }
+    class UserViewHolder(val view: UserRowBinding) : RecyclerView.ViewHolder(view.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)
-        val user_row = UserRowBinding.inflate(layoutInflater,parent,false)
+        val user_row = UserRowBinding.inflate(layoutInflater, parent, false)
         return UserViewHolder(user_row)
     }
-
 
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
@@ -34,7 +30,7 @@ class UsersAdapter : ListAdapter<User,UsersAdapter.UserViewHolder>(UserDiffUtil(
     }
 
 
-    class UserDiffUtil : DiffUtil.ItemCallback<User>(){
+    class UserDiffUtil : DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User) = oldItem.email == newItem.email
 
         override fun areContentsTheSame(oldItem: User, newItem: User) = oldItem == newItem
