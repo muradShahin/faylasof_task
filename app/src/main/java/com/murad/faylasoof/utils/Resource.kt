@@ -1,4 +1,4 @@
-package com.murad.faylasoof.helpers
+package com.murad.faylasoof.utils
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {

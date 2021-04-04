@@ -1,4 +1,4 @@
-package com.murad.faylasoof.helpers
+package com.murad.faylasoof.utils
 
 data class ImageResponse(
     val isUploaded:Boolean,

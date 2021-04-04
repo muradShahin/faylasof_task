@@ -3,26 +3,17 @@ package com.murad.faylasoof.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.murad.faylasoof.R
 import com.murad.faylasoof.auth.models.User
 import com.murad.faylasoof.databinding.UserRowBinding
 import java.util.ArrayList
 
-class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>(){
+class UsersAdapter : ListAdapter<User,UsersAdapter.UserViewHolder>(UserDiffUtil()){
 
-    private var users = ArrayList<User>()
 
-    fun submitUsers(users:List<User>){
-
-        this.users = users as ArrayList<User>
-        notifyDataSetChanged()
-    }
-
-    fun clearData(){
-        this.users.clear()
-        notifyDataSetChanged()
-    }
 
     class UserViewHolder(val view:UserRowBinding):RecyclerView.ViewHolder(view.root){
 
@@ -35,12 +26,18 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.UserViewHolder>(){
         return UserViewHolder(user_row)
     }
 
-    override fun getItemCount(): Int {
-        return users.size
-    }
+
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
-        holder.view.user = users[position]
+        holder.view.user = getItem(position)
+    }
+
+
+    class UserDiffUtil : DiffUtil.ItemCallback<User>(){
+        override fun areItemsTheSame(oldItem: User, newItem: User) = oldItem.email == newItem.email
+
+        override fun areContentsTheSame(oldItem: User, newItem: User) = oldItem == newItem
+
     }
 }

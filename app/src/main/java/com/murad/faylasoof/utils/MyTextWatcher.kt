@@ -1,9 +1,9 @@
-package com.murad.faylasoof.helpers
+package com.murad.faylasoof.utils
 
 import android.text.Editable
 import android.text.TextWatcher
 
-class MyTextWatcher(val myWatcher: MyWatcher) :TextWatcher{
+class MyTextWatcher(val myWatcher: MyWatcher) : TextWatcher {
     override fun afterTextChanged(s: Editable?) {
     }
 
@@ -11,6 +11,6 @@ class MyTextWatcher(val myWatcher: MyWatcher) :TextWatcher{
     }
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        myWatcher.onTextChanged(s,start,before,count)
+        myWatcher.onTextChanged(s, start, before, count)
     }
 }

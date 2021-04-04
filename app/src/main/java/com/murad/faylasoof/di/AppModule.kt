@@ -28,11 +28,10 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providesFirebaseStorageReference():StorageReference{
+    fun providesFirebaseStorageReference(): StorageReference {
         val storage = FirebaseStorage.getInstance()
-        val storageRef = storage.reference
 
-        return storageRef
+        return storage.reference
     }
 
 }

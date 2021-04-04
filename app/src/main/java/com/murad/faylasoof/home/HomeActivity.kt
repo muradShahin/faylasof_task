@@ -1,7 +1,6 @@
 package com.murad.faylasoof.home
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.murad.faylasoof.R
 import dagger.hilt.android.AndroidEntryPoint
